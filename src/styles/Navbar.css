@@ -1,0 +1,21 @@
+.header {
+  background-color: antiquewhite;
+  padding: 20px;
+}
+.header ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header ul li{ 
+    list-style: none;
+}
+
+
+.header ul li a {
+  margin: 10px;
+  color: black;
+  list-style: none;
+  font-size: 40px;
+  font-family: fantasy;
+}
