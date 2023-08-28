@@ -1,0 +1,64 @@
+.foto{
+  max-width: 300px;
+  border: 2px solid rgb(84, 161, 238);
+  margin-right: 10px;
+  margin-left: 130px;
+  margin-top: 30px;
+ display: flex;
+ row-gap: 5px;
+ background-image: url("https://i.gifer.com/origin/34/3459e0e117b5d35a51aef0cf1e443831_w200.webp");
+ border-radius: 15px;
+ background-size: 100%;
+}
+.name-pokemon{
+    font-size: 100px;
+}
+
+p{
+  margin-left: 200px;
+  font-size: 30px;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  font-family: "nombres";
+  text-transform: uppercase;
+}
+
+body{
+ background-image: url("https://cdn.pixabay.com/photo/2016/08/27/11/59/pokemon-1624022_1280.jpg");
+ background-size: 100%;
+}
+@font-face {
+  font-family: "nombres";
+  src: url("../../public/Pokemon\ Hollow.ttf") format(truetype);
+}
+
+@font-face {
+  font-family: "nombres3";
+  src: url("../../public/CAMPUS\ PERSONAL\ USE.ttf") format(truetype);
+}
+
+
+
+@font-face {
+  font-family: "nombres2";
+  src: url("../../public/Vampire\ Wars.ttf") format(truetype);
+}
+
+
+h1{
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  color: rgb(251, 251, 251);
+  margin-top: -10px;
+  margin-bottom: 50px;
+  font-family: "nombres2";
+}
+
+.pokemon-container{
+  display: flex;
+ row-gap: 5px;
+}
+img{
+  width: 700px;
+}

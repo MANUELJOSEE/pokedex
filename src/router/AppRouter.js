@@ -5,6 +5,7 @@ import Pokedex from "../pages/Pokedex";
 import Navbar from "../components/Navbar";
 import { Route, Routes } from "react-router-dom";
 
+
 function AppRouter() {
   return (
     <>
