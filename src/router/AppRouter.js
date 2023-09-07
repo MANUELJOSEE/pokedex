@@ -3,8 +3,8 @@ import About from "../pages/About";
 import Home from "../pages/home";
 import Pokedex from "../pages/Pokedex";
 import Navbar from "../components/Navbar";
+import InfoPokemon from "../pages/InfoPokemon";
 import { Route, Routes } from "react-router-dom";
-
 
 function AppRouter() {
   return (
@@ -13,7 +13,8 @@ function AppRouter() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/pokedex" element={<Pokedex/>} />
+        <Route path="/pokedex" element={<Pokedex />} />
+        <Route path="/pokedex/:id" element={<InfoPokemon />} />
       </Routes>
     </>
   );
