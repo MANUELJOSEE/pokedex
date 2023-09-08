@@ -2,7 +2,7 @@
   margin-top: -60px;
   margin-bottom: -40px;
   padding: 90px;
- 
+ background-image: url("https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png");
 
 }
 
@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
 }
 .header ul li {
   list-style: none;

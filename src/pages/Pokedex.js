@@ -5,6 +5,8 @@ import { Button, Form, InputGroup } from "react-bootstrap";
 function Pokedex() {
   const [Pokemon, setPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [PokemonCopy, setPokemonCopy] = useState([]);
+  const [update, setUpdate] = useState(false);
 
   useState(() => {
     const fetchedPokemon = async () => {
@@ -12,31 +14,38 @@ function Pokedex() {
         const url = "https://pokeapi.co/api/v2/pokemon?Limit=20";
         // const fetchPokemon = [];
         const response = await getPokemonList(url);
-
-        console.log("saludosssssssssssss");
         const data = response.array;
         console.log(data);
         setPokemon(data);
+        setPokemonCopy(data);
       } catch (error) {
         console.error("Error capturando Pokemon data", error);
       }
       setIsLoading(true);
     };
     fetchedPokemon();
-  }, []);
+  }, [update]);
   function showInfo(pokemon) {
-    console.log(pokemon);
-
     window.open("/pokedex/" + pokemon.id);
   }
+  function searchPokemon(e) {
+    console.log(e.target.value);
+
+    let regex = new RegExp(e.target.value, "i");
+    if (e.target.value !== "") {
+      const filterData = PokemonCopy.filter(({ name }) => regex.test(name));
+      setPokemon(filterData);
+    } else {
+      setUpdate(!update);
+    }
+  }
   <div class="topnav"></div>;
-  console.log(Pokemon);
   return (
     <header>
       {isLoading ? (
         <>
           <div>
-            <InputGroup className="mb-3">
+            {/* <InputGroup className="mb-3">
               <Button variant="outline-secondary" id="button-addon1">
                 Button
               </Button>
@@ -44,7 +53,8 @@ function Pokedex() {
                 aria-label="Example text with button addon"
                 aria-describedby="basic-addon1"
               />
-            </InputGroup>
+            </InputGroup> */}
+            <input onChange={searchPokemon} />
           </div>
 
           <div className="pokemon-container2">
