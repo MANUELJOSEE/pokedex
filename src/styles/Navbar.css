@@ -5,7 +5,9 @@
  background-image: url("https://1000marcas.net/wp-content/uploads/2020/01/Logo-Pokemon.png");
 
 }
-
+a{
+color: aliceblue;
+}
 .header ul {
   display: flex;
   justify-content: space-around;

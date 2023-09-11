@@ -39,6 +39,7 @@ async function getPokemonDetailByUrl(url) {
       id,
       name: data.name,
       image: data.sprites.other["official-artwork"]["front_default"],
+    
     };
   } catch (error) {
     console.error(" Error capturando el detalle", error);

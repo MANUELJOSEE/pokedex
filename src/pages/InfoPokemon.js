@@ -25,7 +25,6 @@ function InfoPokemon() {
    }
   )
   
-    
 
   // https://pokeapi.co/api/v2/pokemon/+id
   
@@ -33,12 +32,14 @@ function InfoPokemon() {
     <div>
       {isLoading ? (
         <>
-          <h1>Pokémon Detail</h1>
+          <h1> Pokémon Detail⚡ </h1>
           <div className="pokemon-container">
 
-          <p>{PokemonsDetail.name}</p>
-          <img src={PokemonsDetail.image   }></img>
-           
+          <p className="name-details">{PokemonsDetail.name}</p>
+          <img className="img-detalles" src={PokemonsDetail.image }></img>
+
+          {/* types: data.types,
+      stats: data.stats, */}
           </div>
         </>
       ) : (

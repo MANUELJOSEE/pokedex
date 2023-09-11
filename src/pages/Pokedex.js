@@ -8,7 +8,7 @@ function Pokedex() {
   const [PokemonCopy, setPokemonCopy] = useState([]);
   const [update, setUpdate] = useState(false);
 
-  useState(() => {
+  useEffect(() => {
     const fetchedPokemon = async () => {
       try {
         const url = "https://pokeapi.co/api/v2/pokemon?Limit=20";
@@ -28,6 +28,23 @@ function Pokedex() {
   function showInfo(pokemon) {
     window.open("/pokedex/" + pokemon.id);
   }
+
+/*{ <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <button class="page-link">Anterior</button>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <button class="page-link" href="#">Siguiente</button>
+    </li>
+  </ul>
+</nav> }*/
+
+
+
   function searchPokemon(e) {
     console.log(e.target.value);
 
@@ -54,18 +71,36 @@ function Pokedex() {
                 aria-describedby="basic-addon1"
               />
             </InputGroup> */}
-            <input onChange={searchPokemon} />
+            <div className="textInputWrapper">
+              <input
+                onChange={searchPokemon}
+                placeholder="Buscar Pokemon"
+                type="text"
+                className="textInput"
+              />
+            </div>
+            <div id="loader">
+              <div className="ls-particles ls-part-1"></div>
+              <div className="ls-particles ls-part-2"></div>
+              <div className="ls-particles ls-part-3"></div>
+              <div className="ls-particles ls-part-4"></div>
+              <div className="ls-particles ls-part-5"></div>
+              <div className="lightsaber ls-left ls-green"></div>
+              <div className="lightsaber ls-right ls-red"></div>
+            </div>
+            {/* <input onChange={searchPokemon} /> */}
           </div>
 
           <div className="pokemon-container2">
             {Pokemon.map((pokemon, index) => (
               <div className="carta" key={index}>
-                <p className="carta-name">{pokemon.name}</p>
+                <p id="carta-name">{pokemon.name}</p>
                 <img className="carta-imagen" src={pokemon.image}></img>
                 <button onClick={() => showInfo(pokemon)}>inspeccionar</button>
               </div>
             ))}
           </div>
+          
         </>
       ) : null}
     </header>
